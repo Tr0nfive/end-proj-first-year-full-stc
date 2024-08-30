@@ -1,0 +1,191 @@
+:root {
+    --reg_grid_size: 1fr;
+    --col_rep: 3;
+    --row_rep: 3;
+    --row_gap: 10px;
+    --bg-c-hl: #0016ff;
+    --regs-div-wi: 350px;
+    --col--gap--br--r: 10px;
+    --align: center;
+    --label-fla: left;
+    --visible: hidden;
+}
+
+/* General styling for all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Grid layout for the registration page */
+.grid_reg {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        'menu menu menu'
+        'banner register banner2';
+    row-gap: var(--row_gap);
+    align-items: var(--align);
+    justify-items: var(--align);
+    background-color: crimson;
+}
+
+/* Styling for the registration form container */
+.register_div {
+    grid-area: register;
+    display: grid;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px;
+    overflow: hidden;
+    column-gap: var(--col--gap--br--r);
+    border-radius: var(--col--gap--br--r);
+    text-align: var(--align);
+    width: var(--regs-div-wi);
+    background-color: darkgray;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+        'headline'
+        'inputs'
+        'submit'
+        'pass-info';
+    height: 500px;
+}
+
+/* Styling for the form headline */
+.form_headline {
+    grid-area: headline;
+    background-color: var(--bg-c-hl);
+    padding: 15px 0px 0px 0px;
+    font-size: 35px;
+    color: white;
+}
+
+/* Grid layout for the input fields in the registration form */
+.inputs {
+    grid-area: inputs;
+    display: grid;
+    grid-template-areas:
+        'user_label user'
+        'user_error user_error'
+        'email_label email'
+        'email_error email_error'
+        'pass_label pass'
+        'pass_error pass_error';
+}
+
+/* Input field styling */
+#userName {
+    grid-area: user;
+}
+
+#user_label {
+    grid-area: user_label;
+}
+
+#user_error {
+    grid-area: user_error;
+    float: var(--label-fla);
+    visibility: var(--visible);
+}
+
+#email_label {
+    grid-area: email_label;
+}
+
+#email {
+    grid-area: email;
+}
+
+#email_error {
+    grid-area: email_error;
+    float: var(--label-fla);
+    visibility: var(--visible);
+}
+
+#pass_label {
+    grid-area: pass_label;
+}
+
+#password {
+    grid-area: pass;
+}
+
+#pass_error {
+    grid-area: pass_error;
+    float: var(--label-fla);
+    visibility: var(--visible);
+}
+
+/* Styling for the submit button */
+.submit_btn {
+    grid-area: submit;
+    margin-top: 25px;
+    width: 100px;
+    height: 25px;
+    margin-right: 15px;
+}
+
+/* Additional styling for the registration form */
+.register_form {
+    padding: 125px 10px 125px 10px;
+    align-content: center;
+}
+
+/* Add asterisks for required inputs */
+.label:has(+ input:required):after {
+    content: ' *';
+    color: red;
+}
+
+/* Menu styling */
+.menu {
+    grid-area: menu;
+    max-height: 75px;
+    width: 100%;
+}
+
+/* Banner styling */
+.banner {
+    grid-area: banner;
+}
+
+.banner2 {
+    grid-area: banner2;
+}
+
+#pass-info{
+    grid-area: pass-info;
+    margin-top: 15px;
+    text-align: center;
+    color: yellow;
+}
+
+/* Styling for the login link within the registration form */
+#login-div {
+    margin-top: 25px;
+}
+
+#login-link > a:link {
+    text-decoration: none;
+    background-color: transparent;
+    color: red;
+}
+
+/* Responsive design adjustments */
+@media (width < 700px) {
+    .grid_reg {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-areas:
+            'menu'
+            'banner'
+            'register'
+            'banner2';
+    }
+    .menu {
+        padding: 0px;
+        margin: 0px;
+        margin: -425px 0px 0px 0px;
+        top: 0;
+        position: sticky;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <script type="module" src="../scripts/index.js" defer></script>
+  </head>
+  <body class="grid_log">
+    <!-- Main navigation menu -->
+    <div class="menu">
+      <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="BannerEditor.html">Banner Editor</a>
+        <a href="MarketingEditor.html">Marketing Editor</a>
+        <!-- Links for users who are not logged in -->
+        <div id="un-login">
+          <a href="./Register.html" id="register_link" class="menu_bar">Register</a>
+          <a href="./Login.html" id="login-link" class="menu_bar active">Login</a>
+        </div>
+        <!-- Links for users who are logged in -->
+        <div id="loged-in">
+          <a href="./Login.html" id="logout" class="menu_bar">Logout</a>
+          <a href="" id="user-btn" class="menu_bar" onclick="">Hello <span id="user-id"></span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- First banner section -->
+    <div class="banner">
+      <img src="../assets/images/satisfactory tumbup long.jpeg" alt="">
+    
+    </div>
+
+    <!-- Login form section -->
+    <div class="login_div">
+      <h3 class="form_headline">Login</h3> <!-- Form headline -->
+      <form action="" class="login_form">
+        <div class="inputs-log"> <!-- Container for input fields -->
+          <label for="name" id="user_label-log">Username:</label>
+          <input type="text" id="userName-log" name="name" placeholder="Username" required>
+          <span id="user_error-log"></span> <!-- Span for displaying username errors -->
+
+          <label for="pass" id="pass_label-log">Password:</label>
+          <input type="password" name="pass" id="password-log" placeholder="Password" required>
+          <span id="pass_error-log"></span> <!-- Span for displaying password errors -->
+        </div>
+        <span> <span></span></span>
+
+        <button type="submit" id="login_sub" class="submit_btn"> Login</button> <!-- Login button -->
+        <!-- Link to register page -->
+        <div id="register-div"><p>Don't have an account? Click here - <span id="register-link"><a href="./Register.html">Register</a></span></p></div>
+      </form>
+    </div>  
+
+    <!-- Second banner section -->
+    <div class="banner2">
+     <img src="../assets/images/satisfactory tumbup long.jpeg" alt="">
+    </div>
+
+    <p id="value"></p>
+
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/images/death-Star.png" /> 
+    <title>Banner Editor</title>
+    <link rel="stylesheet" href="../styles/bannerEditor.css">
+    <link rel="stylesheet" href="../styles/topMenu.css">
+    <link rel="stylesheet" href="../styles/menu.css">
+    <script src="../scripts/bannerCreator.js"></script>
+    <script type="module" src="../scripts/index.js" defer></script>
+</head>
+<body id="bannerBody">
+    <div id="background"></div> <!-- Background div used for background styling -->
+    
+    <!-- Top navigation bar -->
+    <div class="menu">
+        <div class="topnav">
+          <a href="../index.html">Home</a>
+          <a href="BannerEditor.html" class="active">Banner Editor</a>
+          <a href="MarketingEditor.html">Marketing Editor</a>
+          <!-- Links for users who are not logged in -->
+          <div id="un-login">
+            <a href="./Register.html" id="register_link" class="menu_bar">Register</a>
+            <a href="./Login.html" id="login-link" class="menu_bar">Login</a>
+          </div>
+          <!-- Links for users who are logged in -->
+          <div id="loged-in">
+            <a href="./Login.html" id="logout" class="menu_bar">Logout</a>
+            <a href="" id="user-btn" class="menu_bar" onclick="">Hello <span id="user-id"></span></a>
+          </div>
+        </div>
+      </div>
+
+    <!-- Page heading with images and title -->
+    <h1>
+        <img id="hulk" class="hulk" src="../assets/images/banner.png" alt="Hulk Image"> <!-- Left Hulk image -->
+        <p id="Editor">Banner Editor</p> <!-- Title text -->
+        <img id="hulk" class="hulk" src="../assets/images/banner.png" alt="Hulk Image"> <!-- Right Hulk image -->
+    </h1>    
+
+    <!-- Editor section for the banner editor -->
+    <div class="editor-section">
+        <div class="controls"> <!-- Controls for banner editing -->
+            <select id="bannerOrientation">
+                <option value="landscape">Landscape</option>
+                <option value="portrait">Portrait</option>
+            </select>
+            <input type="text" id="bannerText" placeholder="Banner Text"> <!-- Input for banner text -->
+            <p id="Bcolor">Background Color:</p> 
+            <input type="color" id="bannerBgColor" value="#ffffff"> <!-- Background color picker -->
+            <p id="Tcolor">Text Color:</p> 
+            <input type="color" id="bannerTextColor" value="#000000"> <!-- Text color picker -->
+            <input type="number" id="bannerFontSize" value="24" min="10" max="72"> <!-- Font size input -->
+            <select id="bannerFontType"> <!-- Font type selector -->
+                <option value="Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Times New Roman">Times New Roman</option>
+            </select>
+            <button id="addTextLine">Add Text Line</button> <!-- Button to add text -->
+            <button id="deleteTextLine">Delete Selected Text</button> <!-- Button to delete selected text -->
+        </div>
+
+        <!-- Preview section for the banner -->
+        <div id="bannerPreview" class="preview">
+            <!-- Banner text lines will be added here dynamically -->
+        </div>
+    </div>
+
+    <!-- Section for saving/loading banners -->
+    <div id="savedBanners">
+        <button id="saveBannerButton">Save Banner</button> <!-- Button to save the banner -->
+        <h3 id="savedBannersText">Saved Banners:</h3> <!-- Heading for saved banners -->
+        <select id="savedBannerSelect"></select> <!-- Dropdown for saved banners -->
+        <button id="loadBannerButton">Load Selected Banner</button> <!-- Button to load the selected banner -->
+        <button id="deleteBannerButton">Delete Selected Banner</button> <!-- Button to delete the selected banner -->
+    </div>
+
+    <!-- Audio element for Hulk sound -->
+    <audio id="hulkSmash" src="../sounds/hulk_smash_sound_effect.mp3"></audio>
+</body>
+</html>

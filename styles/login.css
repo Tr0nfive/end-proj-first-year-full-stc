@@ -1,0 +1,172 @@
+:root {
+    /* Define custom properties (CSS variables) for reuse throughout the CSS */
+    --reg_grid_size: 1fr;
+    --col_rep: 3;
+    --row_rep: 3;
+    --row_gap: 10px;
+    --bg-c-hl: #0016ff; /* Background color for headline */
+    --align: center; /* Alignment setting */
+    --label-fla: left; /* Label float direction */
+    --visible: hidden; /* Default visibility */
+}
+
+* {
+    box-sizing: border-box; /* Ensure padding and borders are included in element's total width and height */
+}
+
+.grid_log {
+    /* Grid layout for the login page */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    grid-template-rows: auto 1fr; /* Auto height for first row, flexible height for second */
+    grid-template-areas:
+        'menu menu menu'
+        'banner login banner2';
+    row-gap: var(--row_gap); /* Gap between grid rows */
+    align-items: var(--align); /* Align items vertically in the center */
+    justify-items: var(--align); /* Align items horizontally in the center */
+    background-color:crimson;
+}
+
+.login_div {
+    /* Styling for the login container */
+    grid-area: login;
+    display: grid;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px; /* Light shadow around the box */
+    overflow: var(--visible); /* Control overflow based on the visibility variable */
+    column-gap: 10px; /* Gap between columns in the grid */
+    border-radius: 10px; /* Rounded corners */
+    text-align: var(--align); /* Center text alignment */
+    width: 350px; /* Fixed width for the login container */
+    background-color: darkgray; /* Background color */
+    grid-template-rows: repeat(3, 1fr); /* Three equal-height rows */
+    grid-template-areas:
+        'headline'
+        'inputs-log'
+        'submit';
+    height: 500px; /* Fixed height for the login container */
+}
+
+.form_headline {
+    /* Styling for the form headline */
+    grid-area: headline;
+    background-color: var(--bg-c-hl); /* Background color from variable */
+    padding: 15px 0px 0px 0px; /* Padding to push content down */
+    font-size: 35px; /* Large font size */
+    color: white; /* White text color */
+    height: 75px; /* Fixed height */
+}
+
+.inputs-log {
+    /* Styling for the input fields in the form */
+    grid-area: inputs-log;
+    display: grid;
+    grid-template-areas:
+        'user_label user'
+        'user_error user_error'
+        'pass_label pass'
+        'pass_error pass_error';
+}
+
+#userName-log {
+    /* Styling for the username input */
+    grid-area: user;
+    width: 175px; /* Fixed width */
+}
+
+#user_label-log {
+    /* Styling for the username label */
+    grid-area: user_label;
+}
+
+#user_error-log {
+    /* Styling for the username error message */
+    grid-area: user_error;
+    float: var(--label-fla); /* Float direction from variable */
+    visibility: var(--visible); /* Default visibility (hidden) */
+}
+
+#pass_label-log {
+    /* Styling for the password label */
+    grid-area: pass_label;
+}
+
+#password-log {
+    /* Styling for the password input */
+    grid-area: pass;
+    width: 175px; /* Fixed width */
+}
+
+#pass_error-log {
+    /* Styling for the password error message */
+    grid-area: pass_error;
+    float: var(--label-fla); /* Float direction from variable */
+    visibility: var(--visible); /* Default visibility (hidden) */
+}
+
+.submit_btn {
+    /* Styling for the submit button */
+    grid-area: submit;
+    margin-top: 25px; /* Margin above the button */
+    width: 100px; /* Fixed width */
+    height: 25px; /* Fixed height */
+    margin-right: 15px; /* Margin to the right */
+}
+
+.register_form {
+    /* Styling for the form in the registration page */
+    padding: 125px 10px 125px 10px; /* Padding around the form */
+    align-content: var(--align); /* Align content vertically */
+}
+
+.menu {
+    /* Styling for the menu at the top */
+    grid-area: menu;
+    height: 75px; /* Fixed height */
+    width: 100%; /* Full width */
+}
+
+.banner {
+    /* Styling for the first banner */
+    grid-area: banner;
+}
+
+.banner2 {
+    /* Styling for the second banner */
+    grid-area: banner2;
+}
+
+#register-div {
+    /* Styling for the register div */
+    margin-top: 25px; /* Margin above the register div */
+}
+
+#register-link > a:link {
+    /* Styling for the register link */
+    text-decoration: none; /* Remove underline */
+    background-color: transparent; /* Transparent background */
+    color: red; /* Red text color */
+}
+
+@media (width < 700px) {
+    /* Responsive design for screens narrower than 700px */
+    .grid_log {
+        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-rows: repeat(4, 1fr); /* Four equal-height rows */
+        grid-template-areas:
+            'menu'
+            'banner'
+            'login'
+            'banner2';
+    }
+
+    .menu {
+        /* Adjust menu styling for small screens */
+        padding: 0px;
+        margin: 0px;
+        align-items: center;
+        margin: -425px 0px 0px 0px; /* Negative margin to adjust position */
+        top: 0;
+        position: sticky; /* Make the menu sticky */
+    }
+}

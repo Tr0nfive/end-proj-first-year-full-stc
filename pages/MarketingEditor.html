@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing & Landing Page Editor</title>
+    <link rel="stylesheet" href="../styles/marketingEditor.css">
+    <link rel="icon" type="image/png" href="../assets/images/death-Star.png" /> 
+    <link rel="stylesheet" href="../styles/menu.css">
+    <script type="module" src="../scripts/marketingEditor.js"></script>
+    <script type="module" src="../scripts/index.js" defer></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="menu">
+        <div class="topnav">
+          <a href="../index.html">Home</a>
+          <a href="BannerEditor.html">Banner Editor</a>
+          <a href="MarketingEditor.html" class="active">Marketing Editor</a>
+          <!-- Links for users who are not logged in -->
+          <div id="un-login">
+            <a href="./Register.html" id="register_link" class="menu_bar">Register</a>
+            <a href="./Login.html" id="login-link" class="menu_bar">Login</a>
+          </div>
+          <!-- Links for users who are logged in -->
+          <div id="loged-in">
+            <a href="./Login.html" id="logout" class="menu_bar">Logout</a>
+            <a href="" id="user-btn" class="menu_bar" onclick="">Hello <span id="user-id"></span></a>
+          </div>
+        </div>
+      </div>
+
+    <!-- Page title -->
+    <h1>Marketing & Landing Page Editor</h1>
+
+    <!-- Button section to toggle between editors -->
+    <div class="button-section">
+        <button id="landingEditorButton" class="active">Landing Page Editor</button>
+        <button id="marketingEditorButton">Marketing Page Editor</button>
+    </div>
+
+    <!-- Landing Page Editor section -->
+    <div id="landingEditor" class="editor-section">
+        <h2>Campaign Name</h2>
+        <input type="text" id="landingCampaignName" placeholder="Enter Campaign Name">
+
+        <h2>Text Content</h2>
+        <textarea id="landingContent" rows="10" placeholder="Enter your landing page content here..."></textarea>
+        <input type="text" id="landingImageUrl" placeholder="Image URL">
+        
+        <!-- File upload for images -->
+        <label class="custom-file-upload">
+            <input type="file" id="landingImageUpload" accept="image/*">
+            Upload File
+        </label>
+        <button id="removeLandingImageButton">Remove Image</button>
+        <span id="landingFileName">No File Selected</span>
+        
+        <h2>Background Color</h2>
+        <div class="color-picker-section">
+            <button id="landingColorButton" class="color-picker-button">Select Color</button>
+            <div id="landingColorDisplay" class="color-display-box"></div>
+            <input type="color" id="landingPageColor" value="#ffffff" style="position:absolute; visibility:hidden;">
+        </div>
+
+        <h2>Font Type</h2>
+        <select id="landingPageFontType">
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Times New Roman">Times New Roman</option>
+        </select>
+
+        <!-- Preview section for the landing page -->
+        <div id="landingPreview" class="preview"></div>
+
+        <!-- Buttons to save or delete the landing page -->
+        <button id="savePageButton">Save Page</button>
+        <button id="deleteCampaignButton">Delete Campaign</button>
+    </div>
+
+    <!-- Marketing Page Editor section (initially hidden) -->
+    <div id="marketingEditor" class="editor-section" style="display: none;">
+        <h2>Text Content</h2>
+        <textarea id="marketingContent" rows="10" placeholder="Enter your marketing content here..."></textarea>
+        <input type="text" id="imageUrl" placeholder="Image URL">
+        
+        <!-- File upload for images -->
+        <label class="custom-file-upload">
+            <input type="file" id="imageUpload" accept="image/*">
+            Upload File
+        </label>
+        <button id="removeImageButton">Remove Image</button>
+        <span id="fileName">No File Selected</span>
+        
+        <h2>Background Color</h2>
+        <div class="color-picker-section">
+            <button id="marketingColorButton" class="color-picker-button">Select Color</button>
+            <div id="marketingColorDisplay" class="color-display-box"></div>
+            <input type="color" id="pageColor" value="#ffffff" style="position:absolute; visibility:hidden;">
+        </div>
+
+        <h2>Font Type</h2>
+        <select id="pageFontType">
+            <option value="Arial">Arial</option>
+            <option value="Verdana">Verdana</option>
+            <option value="Times New Roman">Times New Roman</option>
+        </select>
+
+        <!-- Preview section for the marketing page -->
+        <div id="marketingPreview" class="preview"></div>
+
+        <!-- Button to save the marketing page -->
+        <button id="saveMarketingPageButton">Save Page</button>
+    </div>
+
+</body>
+</html>

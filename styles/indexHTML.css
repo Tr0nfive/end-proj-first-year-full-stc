@@ -1,0 +1,193 @@
+/* General Styling */
+body {
+  /* Set up a flex container to center content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh; /* Full viewport height */
+  font-family: Hack, monospace; /* Set monospace font */
+  background-color: rgba(255, 255, 255, 0.8); /* Light background with slight transparency */
+  padding: 20px;
+}
+
+#star {
+  /* Background star image styling */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Place behind other elements */
+  opacity: 1;
+}
+
+#spaceJump1 {
+  /* Background image for space jump effect */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* Place behind star image */
+  opacity: 0.95;
+}
+
+div {
+  /* Text styling */
+  color: #ffffff;
+  text-align: center;
+  font-size: 40px;
+}
+
+p {
+  /* Main paragraph styling */
+  margin: 16px;
+  font-size: 180px; /* Large font size */
+  color: #ccc; /* Light grey text color */
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 1s ease-in-out; /* Smooth transition for hover effect */
+  position: relative;
+}
+
+p::before {
+  /* Hover effect: color change on full text */
+  content: attr(data-item);
+  transition: all 1s ease-in-out;
+  color: #8254ff; /* Purple color for hover */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0; /* Initially hidden */
+  overflow: hidden;
+}
+
+p:hover::before {
+  width: 100%; /* Reveal full text on hover */
+}
+
+nav {
+  /* Navigation bar styling */
+  margin: 25px;
+  background: #ffffff; /* White background */
+  padding: 16px;
+}
+
+nav .menuItems {
+  /* Menu item styling */
+  list-style: none; /* Remove bullets */
+  display: flex; /* Horizontal layout */
+}
+
+nav .menuItems li {
+  margin: 50px;
+}
+
+nav .menuItems li a {
+  /* Link styling */
+  text-decoration: none;
+  color: #3c3c3c; /* Dark grey text color */
+  font-size: 24px;
+  font-weight: 400;
+  transition: all 0.5s ease-in-out; /* Smooth hover effect */
+  position: relative;
+  text-transform: uppercase;
+}
+
+nav .menuItems li a::before {
+  /* Hover effect for links */
+  content: attr(data-item);
+  transition: 0.5s;
+  color: #8254ff; /* Purple hover color */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0; /* Initially hidden */
+  overflow: hidden;
+}
+
+nav .menuItems li a:hover::before {
+  width: 100%; /* Reveal full link text on hover */
+  transition: all 0.5s ease-in-out;
+}
+
+footer {
+  /* Footer styling */
+  position: absolute;
+  font-size: 12px;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  font-size: 14px;
+  background-color: #f1f1f1; /* Light grey background */
+  color: #000000; /* Black text */
+  text-align: center; /* Centered text */
+}
+
+footer a {
+  /* Footer link styling */
+  text-decoration: none;
+  color: inherit; /* Inherit text color */
+  border-bottom: 1px solid; /* Underline links */
+}
+
+footer a:hover {
+  border-bottom: 1px transparent; /* Remove underline on hover */
+}
+
+/* Responsive Design */
+/* Adjust layout and text size for tablets */
+@media only screen and (max-width: 768px) {
+  p {
+    font-size: 120px; /* Smaller font size for paragraphs */
+    margin: 12px;
+  }
+
+  nav .menuItems li {
+    margin: 30px; /* Reduced spacing between menu items */
+  }
+
+  nav .menuItems li a {
+    font-size: 18px; /* Smaller font size for navigation links */
+  }
+
+  div {
+    font-size: 30px; /* Smaller font size for div content */
+  }
+}
+
+/* Adjust layout and text size for mobile devices */
+@media only screen and (max-width: 480px) {
+  p {
+    font-size: 80px; /* Further reduce font size for small screens */
+    margin: 10px;
+  }
+
+  nav .menuItems {
+    flex-direction: column; /* Stack menu items vertically */
+    align-items: center; /* Center menu items */
+  }
+
+  nav .menuItems li {
+    margin: 20px 0; /* Reduce vertical spacing between menu items */
+  }
+
+  nav .menuItems li a {
+    font-size: 16px; /* Smaller font size for navigation links */
+  }
+
+  div {
+    font-size: 24px; /* Further reduce font size for div content */
+  }
+}

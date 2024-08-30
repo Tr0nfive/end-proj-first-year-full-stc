@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <script type="module" src="../scripts/index.js" defer></script>
+  </head>
+  <body class="grid_reg">
+
+    <!-- Navigation Menu -->
+    <div class="menu">
+      <div class="topnav">
+        <a href="../index.html">Home</a>
+        <a href="BannerEditor.html">Banner Editor</a>
+        <a href="MarketingEditor.html">Marketing Editor</a>
+        <div id="un-login">
+          <!-- Links for users who are not logged in -->
+          <a href="./Register.html" id="register_link" class="menu_bar active">Register</a>
+          <a href="./Login.html" id="login-link" class="menu_bar">Login</a>
+        </div>
+        <div id="loged-in">
+          <!-- Links for logged-in users -->
+          <a href="./Login.html" id="logout" class="menu_bar">Logout</a>
+          <a href="" id="user-btn" class="menu_bar">Hello <span id="user-id"></span></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banner Section -->
+    <div class="banner">
+      <img src="../assets/images/satisfactory tumbup long.jpeg" alt="">
+   
+    </div>
+
+    <!-- Registration Form -->
+    <div class="register_div">
+      <h3 class="form_headline">Register</h3>
+
+      <form action="" class="register_form">
+        <div class="inputs">
+          <!-- Username input field -->
+          <label for="userName" id="user_label" class="label">Username:</label>
+          <input type="text" id="userName" name="name" placeholder="Username" required>
+          <span id="user_error"></span>
+
+          <!-- Email input field -->
+          <label for="Email" id="email_label" class="label">Email: </label>
+          <input type="text" name="email" id="Email" placeholder="Email" required>
+          <span id="email_error"></span>
+
+          <!-- Password input field -->
+          <label for="password" id="pass_label" class="label">Password:</label>
+          <input type="password" name="pass" id="password" placeholder="Password" required>
+          <span id="pass_error"></span>
+        </div>
+       
+
+        <!-- Register button -->
+        <button type="submit" id="register_sub" class="submit_btn">register</button>
+       <div id="pass-info">Password must include 6 charset at least and only English letters and numbers</div>
+        <!-- Link to login page -->
+        <div id="login-div">
+          <p>already have an account? login here - 
+            <span id="login-link"><a href="./Login.html">login</a></span>
+          </p>
+        </div>
+      </form>
+    </div>  
+
+    <!-- Banner Section 2 -->
+    <div class="banner2">
+      <img src="../assets/images/satisfactory tumbup long.jpeg" alt="">
+  
+    </div>
+
+    <p id="value"></p>
+
+  </body>
+</html>

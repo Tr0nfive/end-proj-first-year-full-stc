@@ -1,0 +1,87 @@
+/* Navigation Bar Styling */
+.topnav {
+  position: fixed; /* Keeps the navbar at the top of the page */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensures the navbar stays on top of other elements */
+  overflow: hidden; /* Prevents content from overflowing */
+  background-image: url('../assets/images/lightsaber.jpg'); /* Sets the background image */
+  background-size: cover; /* Ensures the image covers the entire navbar */
+  background-position: center; /* Centers the background image */
+  display: flex; /* Uses flexbox for layout */
+  align-items: center; /* Centers items vertically */
+  padding: 10px; /* Adds padding inside the navbar */
+  max-width: 100%; /* Limits the navbar width to 100% of the viewport */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+/* Link Styling Inside the Navigation Bar */
+.topnav a {
+  float: left; /* Aligns links to the left */
+  color: #ffffff; /* Sets the text color to white */
+  text-align: center; /* Centers the text within each link */
+  padding: 14px 16px; /* Adds padding inside the links */
+  text-decoration: none; /* Removes the underline from links */
+  font-size: 17px; /* Sets the font size */
+  border: 2px solid #0084ff; /* Adds a border to the links */
+  border-radius: 5px; /* Rounds the corners of the links */
+  margin: 0 5px; /* Adds margin between the links */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Adds a glow effect around the links */
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; /* Adds a text shadow for an aura effect */
+}
+
+/* Hover Effect for Links */
+.topnav a:hover {
+  background-color: #ddd; /* Changes the background color on hover */
+  color: rgb(0, 0, 0); /* Changes the text color on hover */
+  border-color: #ffffff; /* Changes the border color on hover */
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px blue, 0 0 5px darkblue; /* Adjusts the text shadow on hover */
+  transform: scale(1.05); /* Slightly enlarges the link on hover */
+}
+
+/* Active Link Styling */
+.topnav a.active {
+  background-color: #ddd; /* Sets the background color for the active link */
+  color: rgb(0, 0, 0); /* Sets the text color for the active link */
+  border-color: #ffffff; /* Sets the border color for the active link */
+  text-shadow: 1px 1px 2px rgb(255, 255, 255), 0 0 25px blue, 0 0 5px darkblue; /* Adjusts the text shadow for the active link */
+}
+
+/* General Menu Bar Styling */
+.menu_bar {
+  color: #f2f2f2; /* Sets the text color */
+  text-align: center; /* Centers the text */
+  font-size: 17px; /* Sets the font size */
+  position: sticky; /* Keeps the menu bar in place when scrolling */
+}
+
+/* Styling for Logged-In Menu Bar */
+#loged-in > .menu_bar {
+ 
+  float: right !important; /* Aligns the logged-in menu items to the right */
+
+}
+
+/* Initial Visibility for Logged-In State */
+#loged-in {
+  visibility: hidden; /* Initially hides the logged-in menu */
+}
+
+/* Initial Visibility for Logged-Out State */
+#un-login {
+  visibility: visible; /* Initially shows the logged-out menu */
+}
+@media (width < 700px){
+
+  .menu {
+    /* Adjust menu styling for small screens */
+    padding: 0px;
+    
+    align-items: center;
+    margin: 50px 0px 0px 0px; /* Negative margin to adjust position */
+    top: 0;
+    
+}
+
+}

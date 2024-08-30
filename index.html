@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="./styles/indexHTML.css">
+    <link rel="icon" type="image/png" href="../assets/images/death-Star.png" /> 
+    <script type="module" src="../scripts/indexHTML.js"></script>
+</head>
+<body>
+    <!-- Background Images -->
+    <img id="star" src="../assets/images/deathStar.png" alt="Death Star">
+    <img id="spaceJump1" src="../assets/images/spacejump1.jpeg" alt="Space Jump">
+    
+    <!-- Welcome Text -->
+    <div>hello and welcome to,</div>
+    <p data-item='skyditor'>skyditor</p>
+    
+    <!-- Navigation Menu -->
+    <section>
+      <div>hope you'll have fun!</div>
+      <nav>
+        <ul class="menuItems">
+          <li><a href='./pages/BannerEditor.html' data-item='Banner Editor'>Banner Editor</a></li>
+          <li><a href='./pages/MarketingEditor.html' data-item='Marketing/Landing Page Editor'>Marketing/Landing Page Editor</a></li>
+          <li><a href='./pages/Register.html' data-item='Register'>Register</a></li>
+          <li><a href='./pages/Login.html' data-item='Login'>Login</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- New Section for Campaign Info -->
+    <div id="campaignInfo">
+        <h2>Current Campaign</h2>
+        <p id="campaignName">No active campaign.</p>
+        <p id="campaignDate">No date available.</p>
+        <div id="landingPreviewBox" class="preview"></div>
+    </div>
+</body>
+</html>
